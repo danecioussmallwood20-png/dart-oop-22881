@@ -48,12 +48,25 @@ The discount is in whole RWF, so I use `~/`.
 | Not a bug | `Phone p = new Phone('Tecno', 50);` | `new` is optional in Dart but still valid | (none) |
 
 ## Part 5
+My prediction:
 
+The program prints 1 and then 5.
+
+For a (a normal Bag): add() adds 1 to _items, so it is 1.
+Then a.items = -5 calls the setter. The setter only accepts values
+that are 0 or more, so -5 is refused and _items stays 1.
+So print(a.items) prints 1.
+
+For b (a BigBag): BigBag overrides add() and calls super.add()
+two times, so each add() adds 2. I call b.add() twice, so
+_items goes 0 -> 2 -> 4. Then b.items = b.items + 1 sets it to
+4 + 1 = 5, which is allowed because it is not below 0.
+So print(b.items) prints 5.
 
 Real output:
-```
+
 (paste after running)
-```
+
 
 Was I right?
 (write yes/no and explain)

@@ -65,7 +65,6 @@ So print(b.items) prints 5.
 
 Real output:
 '''
-
 1
 5
 '''

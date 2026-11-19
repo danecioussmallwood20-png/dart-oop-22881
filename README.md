@@ -64,9 +64,15 @@ _items goes 0 -> 2 -> 4. Then b.items = b.items + 1 sets it to
 So print(b.items) prints 5.
 
 Real output:
+'''
 
-(paste after running)
+1
+5'''
 
 
 Was I right?
-(write yes/no and explain)
+Yes, I was right. The program printed 1 and then 5, the same as my prediction.
+
+For a, I called add() once, so _items became 1. Then I tried a.items = -5. The setter only accepts values that are 0 or more, so it refused -5 and _items stayed 1. That is why the first line printed 1.
+
+For b, BigBag overrides add() and calls super.add() two times, so each add() gives 2 items instead of 1. I called b.add() twice, so _items went from 0 to 2 to 4. Then b.items = b.items + 1 set it to 5, and the setter accepted it because 5 is not below 0. That is why the second line printed 5.
